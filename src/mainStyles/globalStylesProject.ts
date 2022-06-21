@@ -18,8 +18,6 @@ const useStyles = makeStyles(() =>
         fontFamily: 'Manrope, serif',
         fontWidth: 500,
         fontSize: 16,
-        // background: `${PS_OPTIONAL_BACKGROUND}`,
-        // color: `${PS_OPTIONAL_TEXT_1}`,
         width: '100%',
         height: '100%',
         overflowX: 'hidden',

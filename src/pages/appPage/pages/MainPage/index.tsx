@@ -1,12 +1,23 @@
 import React from 'react';
-import { Button, Container } from '@mui/material';
 import { HeaderContainer } from 'containers/headerContainer';
+import { MainLabelContainer } from 'containers/mainLabelContainer';
+import { ColorContainer } from 'containers/colorContainer';
+import { PS_MAIN_WHITE, PS_PRIMARY_BACKGROUND } from 'mainStyles/GlobalTheme';
+import { TableMainContainer } from 'containers/tableMainContainer';
 
 export const MainPage = () => {
+  const maxWidthContainer = 1200;
   return (
-    <Container sx={{ minWidth: 1200 }}>
-      <HeaderContainer />
-      <Button variant={'fullColor'}>Custom</Button>
-    </Container>
+    <>
+      <ColorContainer width={maxWidthContainer} color={PS_MAIN_WHITE}>
+        <HeaderContainer />
+      </ColorContainer>
+      <ColorContainer width={maxWidthContainer} color={PS_PRIMARY_BACKGROUND}>
+        <MainLabelContainer />
+      </ColorContainer>
+      <ColorContainer width={maxWidthContainer} color={PS_MAIN_WHITE}>
+        <TableMainContainer />
+      </ColorContainer>
+    </>
   );
 };
