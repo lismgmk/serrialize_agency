@@ -5,7 +5,7 @@ import WebFont from 'webfontloader';
 
 WebFont.load({
   google: {
-    families: ['Manrope:500,600,700'],
+    families: ['Manrope:500,600,700', 'Roboto'],
   },
 });
 
