@@ -1,51 +1,156 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { TableCellProps } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import TableHead, { TableHeadProps } from '@mui/material/TableHead';
+import TableRow, { TableRowProps } from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import { Box, BoxProps, Link, Pagination, SvgIcon, Typography } from '@mui/material';
+import { nanoid } from 'nanoid';
+import { ArrowLeftRightSvg } from 'svgIcons/ArrowLeftRightSvg';
+import UsePagination from 'components/tableRegistry/hooks/pagination.effect';
 
-function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-  return { name, calories, fat, carbs, protein };
+function createData(num: string, name: string, className: string, classPo: string, datePo: string, link: string) {
+  return { num, name, className, classPo, datePo, link };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData(
+    '#1',
+    'Система управления базами данных «Ред База Данных»',
+    '02.06',
+    'Системы управления базами данных',
+    '29.01.2016',
+    'Ссылка',
+  ),
+  createData(
+    '#1',
+    'Система управления базами данных «Ред База Данных»',
+    '02.06',
+    'Системы управления базами данных',
+    '29.01.2016',
+    'Ссылка',
+  ),
+  createData(
+    '#1',
+    'Система управления базами данных «Ред База Данных»',
+    '02.06',
+    'Системы управления базами данных',
+    '29.01.2016',
+    'Ссылка',
+  ),
+  createData(
+    '#1',
+    'Система управления базами данных «Ред База Данных»',
+    '02.06',
+    'Системы управления базами данных',
+    '29.01.2016',
+    'Ссылка',
+  ),
 ];
+
+export const CustomTableHead = styled(TableHead)<TableHeadProps>(({ theme }) => ({
+  borderTop: `1px solid ${theme.palette.line.main}`,
+}));
+
+export const CustomTableRow = styled(TableRow)<TableRowProps>(({ theme }) => ({
+  padding: '20px 0px',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1.6fr 0.5fr 1fr 0.6fr 0.5fr',
+  gridTemplateRows: 'max-content',
+  width: '100%',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  borderBottom: `1px solid ${theme.palette.line.main}`,
+}));
+
+export const CustomTableCell = styled(TableCell)<TableCellProps>(({ theme }) => ({
+  borderBottom: 'none',
+  padding: '0px',
+}));
+export const PaginationBox = styled(Box)<BoxProps>(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  paddingBottom: '80px',
+  paddingTop: '40px',
+}));
 
 export const TableRegistry = () => {
   return (
-    <TableContainer component={Paper}>
-      <Table size="small" aria-label="a dense table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
+    <TableContainer sx={{ background: 'inherit' }} component={Paper}>
+      <Table sx={{}} size="small" aria-label="a dense table">
+        <CustomTableHead>
+          <CustomTableRow>
+            <CustomTableCell>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <SvgIcon
+                  sx={{ transform: 'rotate(90deg)', fontSize: 19, mr: 2, color: 'primary.contrastText' }}
+                  component={ArrowLeftRightSvg}
+                />
+                <Typography variant={'subtitle1'}>Регистрационный номер</Typography>
+              </Box>
+            </CustomTableCell>
+            <CustomTableCell>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <SvgIcon
+                  sx={{ transform: 'rotate(90deg)', fontSize: 19, mr: 2, color: 'primary.contrastText' }}
+                  component={ArrowLeftRightSvg}
+                />
+                <Typography variant={'subtitle1'}>Наименование программного обеспечения</Typography>
+              </Box>
+            </CustomTableCell>
+            <CustomTableCell>
+              <Typography variant={'subtitle1'}>Код класса</Typography>
+            </CustomTableCell>
+            <CustomTableCell>
+              <Typography variant={'subtitle1'}>Класс программного обеспечения</Typography>
+            </CustomTableCell>
+            <CustomTableCell>
+              <Typography variant={'subtitle1'}>Дата регистрации</Typography>
+            </CustomTableCell>
+            <CustomTableCell>
+              <Typography variant={'subtitle1'}>Адрес сайта</Typography>
+            </CustomTableCell>
+          </CustomTableRow>
+        </CustomTableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
+            <CustomTableRow key={nanoid()}>
+              <CustomTableCell>
+                <Typography sx={{ pl: 4 }} variant={'body2'}>
+                  {row.num}
+                </Typography>
+              </CustomTableCell>
+              <CustomTableCell>
+                <Typography sx={{ pl: 4 }} variant={'body2'}>
+                  {row.name}
+                </Typography>
+              </CustomTableCell>
+              <CustomTableCell>
+                <Typography variant={'body2'}>{row.className}</Typography>
+              </CustomTableCell>
+              <CustomTableCell>
+                <Typography variant={'body2'}>{row.className}</Typography>
+              </CustomTableCell>
+              <CustomTableCell>
+                <Typography variant={'body2'}>{row.datePo}</Typography>
+              </CustomTableCell>
+              <CustomTableCell>
+                <Link>
+                  <Typography variant={'subtitle1'}>{row.link}</Typography>
+                </Link>
+              </CustomTableCell>
+            </CustomTableRow>
           ))}
         </TableBody>
       </Table>
+      <PaginationBox>
+        <Pagination siblingCount={0} boundaryCount={2} count={100} showFirstButton showLastButton />
+        <UsePagination />
+      </PaginationBox>
     </TableContainer>
   );
 };
