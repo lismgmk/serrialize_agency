@@ -7,10 +7,10 @@ import TableHead, { TableHeadProps } from '@mui/material/TableHead';
 import TableRow, { TableRowProps } from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import { Box, BoxProps, Link, Pagination, SvgIcon, Typography } from '@mui/material';
+import { Box, BoxProps, Link, SvgIcon, Typography } from '@mui/material';
 import { nanoid } from 'nanoid';
 import { ArrowLeftRightSvg } from 'svgIcons/ArrowLeftRightSvg';
-import UsePagination from 'components/tableRegistry/hooks/pagination.effect';
+import { CustomPagination } from 'elements/customPagination';
 
 function createData(num: string, name: string, className: string, classPo: string, datePo: string, link: string) {
   return { num, name, className, classPo, datePo, link };
@@ -148,8 +148,7 @@ export const TableRegistry = () => {
         </TableBody>
       </Table>
       <PaginationBox>
-        <Pagination siblingCount={0} boundaryCount={2} count={100} showFirstButton showLastButton />
-        <UsePagination />
+        <CustomPagination />
       </PaginationBox>
     </TableContainer>
   );

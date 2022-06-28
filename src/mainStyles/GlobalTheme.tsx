@@ -151,7 +151,7 @@ export const themeCustom = createTheme({
     },
     subtitle2: {
       fontSize: 14,
-      fontWeight: 50,
+      fontWeight: 500,
       color: PS_MAIN_BLUE,
     },
     body1: {
