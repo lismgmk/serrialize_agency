@@ -40,7 +40,7 @@ export const HeaderContainer = () => {
         <Box sx={{ flexGrow: 1 }} />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <IconButton size="large" color="inherit">
-            <SvgIcon fontSize={'small'} component={NotesCalendarSvg} />
+            <NotesCalendarSvg sx={{ width: 25, height: 25 }} />
           </IconButton>
           <IconButton size="large" color="inherit" sx={{ mr: 2.5, ml: 2.5 }}>
             <CustomBadge badgeContent={4}>
