@@ -7,7 +7,7 @@ import TableHead, { TableHeadProps } from '@mui/material/TableHead';
 import TableRow, { TableRowProps } from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
-import { Box, BoxProps, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { nanoid } from 'nanoid';
 import { PaperSvg } from 'svgIcons/PaperSvg';
 import { DownloadSvg } from 'svgIcons/DownloadSvg';
@@ -72,13 +72,6 @@ export const CustomTableRow = styled(TableRow)<TableRowProps>(({ theme }) => ({
 export const CustomTableCell = styled(TableCell)<TableCellProps>(({ theme }) => ({
   borderBottom: 'none',
   padding: '0px',
-}));
-export const PaginationBox = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  paddingBottom: '80px',
-  paddingTop: '40px',
 }));
 
 export const TableDocument = () => {
