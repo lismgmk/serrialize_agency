@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Button, Card, Grid, InputAdornment, SvgIcon, Typography } from '@mui/material';
+import { Box, Card, Grid, InputAdornment, SvgIcon, Typography } from '@mui/material';
 import { SearchSvg } from 'svgIcons/SearchSvg';
 import { CustomTextField } from 'containers/headerContainer/style';
+import { MainButton } from 'containers/newsContainer/style';
 
 export const MainLabelContainer = () => {
   return (
@@ -39,9 +40,9 @@ export const MainLabelContainer = () => {
                 ),
               }}
             />
-            <Button variant={'contained'} sx={{ height: 'inherit', borderRadius: 0, p: '0px 22.5px' }}>
-              <Typography variant={'button'}>Искать</Typography>
-            </Button>
+            <MainButton sx={{ borderRadius: 0, pl: 2.5, pr: 2.5 }}>
+              <Typography variant={'inherit'}>Искать</Typography>
+            </MainButton>
           </Card>
         </Box>
       </Grid>

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { NewsCards } from 'components/newsCards';
 import { PaginationBox } from 'components/tableRegistry';
 import { nanoid } from 'nanoid';
+import { MainButton } from './style';
 
 export const NewsContainer = () => {
   const countCard = [1, 2, 3, 4, 5, 6];
@@ -12,7 +13,7 @@ export const NewsContainer = () => {
         <Typography variant={'h2'}>Новости реестра</Typography>
       </Box>
       <Grid container spacing={2}>
-        {countCard.map((el) => {
+        {countCard.map((_) => {
           return (
             <Grid item key={nanoid()}>
               <NewsCards />
@@ -21,9 +22,9 @@ export const NewsContainer = () => {
         })}
       </Grid>
       <PaginationBox>
-        <Button variant={'contained'} sx={{ height: 'inherit', borderRadius: 0, p: '15px 70px' }}>
-          <Typography variant={'button'}>Показать все</Typography>
-        </Button>
+        <MainButton sx={{ pr: 8.8, pl: 8.8 }}>
+          <Typography variant={'inherit'}>Показать все</Typography>
+        </MainButton>
       </PaginationBox>
     </Box>
   );
