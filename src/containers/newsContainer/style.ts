@@ -28,5 +28,7 @@ export const SecondaryButton = styled(Button)<ButtonProps>(({ theme }) => ({
   textTransform: 'inherit',
   '&: hover': {
     backgroundColor: theme.palette.background.default,
+    border: `2px solid ${theme.palette.primary.main}`,
+    color: theme.palette.primary.main,
   },
 }));

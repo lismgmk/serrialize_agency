@@ -5,6 +5,8 @@ interface CustomTextFieldProps extends StandardTextFieldProps {
   bg?: boolean;
   width?: number;
   height?: number;
+  borderColor?: string;
+  colorAction?: string;
 }
 
 export const AvatarContainer = styled(Box)<BoxProps>(({ theme }) => ({
@@ -28,12 +30,15 @@ export const CustomBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 }));
 
 export const CustomTextField = styled(TextField, {
-  shouldForwardProp: (props) => props !== 'bg' && props !== 'width' && props !== 'height',
+  shouldForwardProp: (props) =>
+    props !== 'bg' && props !== 'width' && props !== 'height' && props !== 'borderColor' && props !== 'colorAction',
 })<CustomTextFieldProps>((props) => ({
   background: props.bg ? props.theme.palette.search.main : props.theme.palette.background.default,
   width: props.width,
   borderRadius: 5,
+  border: `2px solid ${props.borderColor}`,
   placeholder: props.placeholder,
+
   fontSize: 14,
   fontWeight: 500,
   '& .MuiInputAdornment-root': {
@@ -41,6 +46,7 @@ export const CustomTextField = styled(TextField, {
   },
   '& .MuiInputBase-root': {
     height: props.height,
+    color: props.colorAction,
   },
 }));
 
