@@ -38,4 +38,5 @@ export const CustomTypographySubtitle = styled(Typography)<TypographyProps>(({ t
 export const CustomTypographyH5 = styled(Typography)<TypographyProps>(({ theme }) => ({
   borderBottom: `2px solid ${theme.palette.line.main}`,
   color: `${theme.palette.primary.contrastText}`,
+  paddingBottom: '10px',
 }));
