@@ -12,7 +12,7 @@ import {
 export const FooterContainer = () => {
   return (
     <Box>
-      <Grid sx={{ mb: 5, mt: 10 }} container>
+      <Grid spacing={4} sx={{ mb: 5, mt: 10 }} container>
         <CustomGrid xs={4} item>
           <Box
             component="img"
