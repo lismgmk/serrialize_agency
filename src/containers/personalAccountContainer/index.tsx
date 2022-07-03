@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Avatar, Box, Grid, Typography } from '@mui/material';
-import { CustomTextField } from 'containers/headerContainer/style';
-import { MainButton } from 'containers/newsContainer/style';
-import { PS_OPTIONAL_GREEN, PS_OPTIONAL_RED } from 'mainStyles/GlobalTheme';
-import { CheckCircleSvg } from 'svgIcons/CheckCircleSvg';
 import { MenuButton } from './style';
-import { UserRoundSvg } from '../../svgIcons/UserRoundSvg';
+import { useGetIconButtonEffect } from './hooks/getIconButton.effect';
+import { LogoutSvg } from '../../svgIcons/LogoutSvg';
+import { PS_OPTIONAL_GREEN, PS_OPTIONAL_RED } from '../../mainStyles/GlobalTheme';
+import { CustomTextField } from 'containers/headerContainer/style';
+import { CheckCircleSvg } from '../../svgIcons/CheckCircleSvg';
 
 export interface IButtonState {
   toggle: boolean;
@@ -22,7 +22,8 @@ const initialState: IButtonState[] = [
 ];
 export const PersonalAccountContainer = () => {
   const [buttonState, setButtonState] = useState<IButtonState[]>(initialState);
-
+  const { getIconButton } = useGetIconButtonEffect();
+  const handlerLogout = () => {};
   const handlerClick = (event: React.MouseEvent<HTMLElement>) => {
     const helperArr = buttonState.map((el) => {
       // @ts-ignore
@@ -45,12 +46,21 @@ export const PersonalAccountContainer = () => {
                 onClick={handlerClick}
                 toggle={el.toggle}
                 name={el.name}
-                startIcon={<UserRoundSvg sx={{ width: 25, height: 25 }} color={'inherit'} />}
+                startIcon={getIconButton(el.name)}
               >
                 {el.title}
               </MenuButton>
             );
           })}
+          <MenuButton
+            sx={{ color: 'optionalSecond.light' }}
+            disableElevation
+            disableRipple
+            onClick={handlerLogout}
+            startIcon={<LogoutSvg sx={{ width: 25, height: 20, color: 'optionalSecond.light' }} />}
+          >
+            Выход
+          </MenuButton>
         </Grid>
         <Grid item xs={8}>
           <Avatar alt="Avatar" sx={{ width: 48, height: 48 }}>
@@ -106,9 +116,9 @@ export const PersonalAccountContainer = () => {
             </Typography>
           </Box>
         </Grid>
-        <MainButton sx={{ width: 430, height: 56 }}>
-          <Typography variant={'inherit'}>Вход</Typography>
-        </MainButton>
+        {/*<MainButton sx={{ width: 430, height: 56 }}>*/}
+        {/*  <Typography variant={'inherit'}>Вход</Typography>*/}
+        {/*</MainButton>*/}
       </Grid>
     </Box>
   );

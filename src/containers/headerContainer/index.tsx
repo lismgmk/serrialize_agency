@@ -3,7 +3,6 @@ import { AppBar, Avatar, Box, IconButton, InputAdornment, SvgIcon, Typography } 
 import { SearchSvg } from 'svgIcons/SearchSvg';
 import { NotesCalendarSvg } from 'svgIcons/NotesCalendarSvg';
 import { BellSvg } from 'svgIcons/BellSvg';
-import { PS_MAIN_BLUE } from 'mainStyles/GlobalTheme';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { AvatarContainer, CustomBadge, CustomTextField, StyledToolbar } from './style';
 
@@ -44,7 +43,7 @@ export const HeaderContainer = () => {
           </IconButton>
           <IconButton size="large" color="inherit" sx={{ mr: 2.5, ml: 2.5 }}>
             <CustomBadge badgeContent={4}>
-              <BellSvg color={PS_MAIN_BLUE} />
+              <BellSvg sx={{ color: 'primary.main' }} />
             </CustomBadge>
           </IconButton>
           <AvatarContainer>
