@@ -7,6 +7,7 @@ import { PS_MAIN_WHITE } from 'mainStyles/GlobalTheme';
 import { HeaderContainer } from 'containers/headerContainer';
 import { FooterContainer } from 'containers/footerContainer';
 import { AuthPage } from 'pages/appPage/pages/AuthPage';
+import { PersonalAccount } from 'pages/appPage/pages/PersonalAccount';
 
 export const maxWidthContainer = 1200;
 export const AppPage = () => {
@@ -21,6 +22,9 @@ export const AppPage = () => {
         </Route>
         <Route exact path={MAIN_PATH.AUTHORISATION}>
           <AuthPage />
+        </Route>
+        <Route exact path={MAIN_PATH.PERSONAL}>
+          <PersonalAccount />
         </Route>
       </Switch>
       <ColorContainer width={maxWidthContainer} color={PS_MAIN_WHITE}>
