@@ -7,11 +7,12 @@ import {
   CustomTypographyH5,
   CustomTypographyH6,
   CustomTypographySubtitle,
+  FooterBoxUp,
 } from './style';
 
 export const FooterContainer = () => {
   return (
-    <Box>
+    <FooterBoxUp>
       <Grid spacing={4} sx={{ mb: 5, mt: 10 }} container>
         <CustomGrid xs={4} item>
           <Box
@@ -69,6 +70,6 @@ export const FooterContainer = () => {
       <CustomFooterBox>
         <Typography variant={'inherit'}>© Copyright 2022— ОАО«РеестрПО». Всеправа защищены.</Typography>
       </CustomFooterBox>
-    </Box>
+    </FooterBoxUp>
   );
 };

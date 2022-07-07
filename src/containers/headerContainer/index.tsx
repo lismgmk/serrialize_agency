@@ -1,14 +1,15 @@
 import React from 'react';
-import { AppBar, Avatar, Box, IconButton, InputAdornment, SvgIcon, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, InputAdornment, SvgIcon, Typography } from '@mui/material';
 import { SearchSvg } from 'svgIcons/SearchSvg';
 import { NotesCalendarSvg } from 'svgIcons/NotesCalendarSvg';
 import { BellSvg } from 'svgIcons/BellSvg';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { AvatarContainer, CustomBadge, CustomTextField, StyledToolbar } from './style';
+import { AvatarContainer, CustomAppBar, CustomBadge, CustomTextField, StyledToolbar } from './style';
+import { UserRoundSvg } from '../../svgIcons/UserRoundSvg';
 
 export const HeaderContainer = () => {
   return (
-    <AppBar position="static">
+    <CustomAppBar position="static">
       <StyledToolbar>
         <Box
           component="img"
@@ -48,13 +49,13 @@ export const HeaderContainer = () => {
           </IconButton>
           <AvatarContainer>
             <Avatar alt="Avatar" sx={{ width: 48, height: 48 }}>
-              Av
+              <UserRoundSvg />
             </Avatar>
             <Typography sx={{ color: 'text.secondary', padding: '0px 10px 0px 19px' }}>Захар Палазник</Typography>
             <KeyboardArrowDownIcon fontSize={'medium'} />
           </AvatarContainer>
         </Box>
       </StyledToolbar>
-    </AppBar>
+    </CustomAppBar>
   );
 };

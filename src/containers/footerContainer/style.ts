@@ -1,6 +1,10 @@
 import { Box, BoxProps, Grid, GridProps, Typography, TypographyProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
+export const FooterBoxUp = styled(Box)<BoxProps>(({ theme }) => ({
+  paddingBottom: '80px',
+  borderTop: `2px solid ${theme.palette.line.main}`,
+}));
 export const CustomFooterBox = styled(Box)<BoxProps>(({ theme }) => ({
   paddingTop: '20px',
   paddingBottom: '80px',
