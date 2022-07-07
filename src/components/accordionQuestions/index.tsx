@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
+import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
-
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => <MuiAccordionSummary {...props} />)(() => ({
   borderBottom: 0,
@@ -24,7 +23,7 @@ export const AccordionQuestions = () => {
 
   return (
     <div>
-      <MuiAccordion elevation={0} square  onChange={handleChange('panel1')}>
+      <MuiAccordion elevation={0} square onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={
             expanded ? (
