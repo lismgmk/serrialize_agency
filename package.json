@@ -26,7 +26,6 @@
     "styled-components": "^5.3.3",
     "tslib": "^2.0.0"
   },
-  "homepage": "https://lismgmk.github.io/serrialize_agency",
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
