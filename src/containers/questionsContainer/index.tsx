@@ -1,6 +1,6 @@
 import React from 'react';
-import {Grid, Typography} from '@mui/material';
-import {AccordionQuestions} from 'components/accordionQuestions';
+import { Grid, Typography } from '@mui/material';
+import { AccordionQuestions } from 'components/accordionQuestions';
 
 export const QuestionsContainer = () => {
   const arr = [1, 2, 3, 4, 5];

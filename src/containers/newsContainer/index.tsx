@@ -1,8 +1,8 @@
 import React from 'react';
-import {Box, Grid, Typography} from '@mui/material';
-import {NewsCards} from 'components/newsCards';
-import {PaginationBox} from 'components/tableRegistry';
-import {MainButton} from './style';
+import { Box, Grid, Typography } from '@mui/material';
+import { NewsCards } from 'components/newsCards';
+import { PaginationBox } from 'components/tableRegistry';
+import { MainButton } from './style';
 
 export const NewsContainer = () => {
   const countCard = [1, 2, 3, 4, 5, 6];
