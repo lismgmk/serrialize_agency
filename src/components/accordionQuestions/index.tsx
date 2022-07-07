@@ -1,21 +1,18 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
-import MuiAccordionSummary, { AccordionSummaryProps } from '@mui/material/AccordionSummary';
+import {styled} from '@mui/material/styles';
+import MuiAccordion from '@mui/material/Accordion';
+import MuiAccordionSummary, {AccordionSummaryProps} from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Accordion = styled((props: AccordionProps) => <MuiAccordion elevation={0} square {...props} />)(
-  ({ theme }) => ({}),
-);
 
-const AccordionSummary = styled((props: AccordionSummaryProps) => <MuiAccordionSummary {...props} />)(({ theme }) => ({
+const AccordionSummary = styled((props: AccordionSummaryProps) => <MuiAccordionSummary {...props} />)(() => ({
   borderBottom: 0,
   flexDirection: 'row-reverse',
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+const AccordionDetails = styled(MuiAccordionDetails)(() => ({
   padding: '20px 15px 0px 42px',
 }));
 export const AccordionQuestions = () => {
@@ -27,7 +24,7 @@ export const AccordionQuestions = () => {
 
   return (
     <div>
-      <Accordion onChange={handleChange('panel1')}>
+      <MuiAccordion elevation={0} square  onChange={handleChange('panel1')}>
         <AccordionSummary
           expandIcon={
             expanded ? (
@@ -58,7 +55,7 @@ export const AccordionQuestions = () => {
             с использованием усиленной квалифицированной (отсоединяемой) электронной подписи.{' '}
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </MuiAccordion>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
-import { AccordionQuestions } from 'components/accordionQuestions';
-import { nanoid } from 'nanoid';
+import {Grid, Typography} from '@mui/material';
+import {AccordionQuestions} from 'components/accordionQuestions';
 
 export const QuestionsContainer = () => {
   const arr = [1, 2, 3, 4, 5];
@@ -14,7 +13,7 @@ export const QuestionsContainer = () => {
       </Grid>
       <Grid item xs={7} sx={{ mb: 10.1, mt: 10.1 }}>
         {arr.map((el) => (
-          <AccordionQuestions key={nanoid()} />
+          <AccordionQuestions key={el} />
         ))}
       </Grid>
     </Grid>
