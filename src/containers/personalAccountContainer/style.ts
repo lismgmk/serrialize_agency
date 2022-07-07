@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Button, ButtonProps } from '@mui/material';
+import { Box, BoxProps, Button, ButtonProps } from '@mui/material';
 
 interface CustomButtonProps extends ButtonProps {
   toggle?: boolean;
@@ -20,9 +20,15 @@ export const MenuButton = styled(Button, {
   color: props.toggle ? props.theme.palette.primary.main : props.theme.palette.primary.contrastText,
   textTransform: 'inherit',
   justifyContent: 'start',
-  // '&: hover': {
-  //   border: `2px solid ${props.theme.palette.line.main}`,
-  //   background: props.theme.palette.background.default,
-  //   color: props.theme.palette.primary.contrastText,
-  // },
+}));
+
+export const AvatarBoxPersonal = styled(Box)<BoxProps>(({ theme }) => ({
+  paddingBottom: '36px',
+  borderBottom: `2px solid ${theme.palette.line.main}`,
+  display: 'flex',
+  alignItems: 'center',
+}));
+export const AvatarBoxPersonalPassword = styled(Box)<BoxProps>(({ theme }) => ({
+  borderTop: `2px solid ${theme.palette.line.main}`,
+  borderBottom: `2px solid ${theme.palette.line.main}`,
 }));

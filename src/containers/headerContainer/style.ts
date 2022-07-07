@@ -1,4 +1,13 @@
-import { Badge, BadgeProps, Box, BoxProps, StandardTextFieldProps, TextField } from '@mui/material';
+import {
+  AppBar,
+  AppBarProps,
+  Badge,
+  BadgeProps,
+  Box,
+  BoxProps,
+  StandardTextFieldProps,
+  TextField,
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 interface CustomTextFieldProps extends StandardTextFieldProps {
@@ -8,6 +17,10 @@ interface CustomTextFieldProps extends StandardTextFieldProps {
   borderColor?: string;
   colorAction?: string;
 }
+
+export const CustomAppBar = styled(AppBar)<AppBarProps>(({ theme }) => ({
+  borderBottom: `2px solid ${theme.palette.line.main}`,
+}));
 
 export const AvatarContainer = styled(Box)<BoxProps>(({ theme }) => ({
   display: 'flex',
@@ -38,7 +51,6 @@ export const CustomTextField = styled(TextField, {
   borderRadius: 5,
   border: `2px solid ${props.borderColor}`,
   placeholder: props.placeholder,
-
   fontSize: 14,
   fontWeight: 500,
   '& .MuiInputAdornment-root': {
