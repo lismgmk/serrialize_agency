@@ -13,7 +13,7 @@ export const CustomFooterBox = styled(Box)<BoxProps>(({ theme }) => ({
   color: `${theme.palette.secondary.light}`,
 }));
 
-export const CustomGrid = styled(Grid)<GridProps>(({ theme }) => ({
+export const CustomGrid = styled(Grid)<GridProps>(() => ({
   display: 'flex',
   flexDirection: 'column',
   fontSize: '14px',

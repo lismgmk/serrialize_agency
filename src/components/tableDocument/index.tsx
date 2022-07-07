@@ -69,7 +69,7 @@ export const CustomTableRow = styled(TableRow)<TableRowProps>(({ theme }) => ({
   borderBottom: `1px solid ${theme.palette.line.main}`,
 }));
 
-export const CustomTableCell = styled(TableCell)<TableCellProps>(({ theme }) => ({
+export const CustomTableCell = styled(TableCell)<TableCellProps>(() => ({
   borderBottom: 'none',
   padding: '0px',
 }));
